@@ -15,5 +15,11 @@ namespace HelloASPDotNET.Controllers
         {
             return Content("<h1>Hello World</h1>", "text/html");
         }
+
+        // GET: /<controller>/welcome?name=value
+        public IActionResult Welcome(string name = "World")
+        {
+            return Content(string.Format("<h1>Welcome to my app, {0}!</h1>", name), "text/html");
+        }
     }
 }
