@@ -13,7 +13,18 @@ namespace HelloASPDotNET.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return Content("<h1>Hello World</h1>", "text/html");
+            string html = "<form method='post' action='hello/display'>" +
+                "<input type='text' name='name' />" +
+                "<input type='submit' value='Greet Me!' />" +
+                "</form>";
+
+            return Content(html, "text/html");
+        }
+
+        // POST: /<controller>/display
+        public IActionResult Display(string name = "World")
+        {
+            return Content(string.Format("<h1>Hello {0}</h1>", name), "text/html");
         }
 
         // GET: /<controller>/welcome?name=value
