@@ -51,6 +51,10 @@ namespace HelloASPDotNET
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "hello",
+                    pattern: "hello/{*index}",
+                    defaults: new { controller = "Hello", action = "Index" });
             });
         }
     }
