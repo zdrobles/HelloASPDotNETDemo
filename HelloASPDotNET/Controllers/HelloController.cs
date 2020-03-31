@@ -27,10 +27,18 @@ namespace HelloASPDotNET.Controllers
             return Content(string.Format("<h1>Hello {0}</h1>", name), "text/html");
         }
 
-        // GET: /<controller>/welcome?name=value
+        [HttpGet]
         public IActionResult Welcome(string name = "World")
         {
             return Content(string.Format("<h1>Welcome to my app, {0}!</h1>", name), "text/html");
         }
+
+        [HttpGet]
+        [Route("/hello/{name}")]
+        public IActionResult WelcomeByName(string name)
+        {
+            return Content(string.Format("<h1>Welcome to my app, {0}!</h1>", name), "text/html");
+        }
+
     }
 }
