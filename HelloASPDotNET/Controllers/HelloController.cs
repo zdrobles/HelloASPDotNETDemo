@@ -18,7 +18,7 @@ namespace HelloASPDotNET.Controllers
             return Content("<h1>Hello World</h1>", "text/html");
         }
 
-        // GET: /<controller>/welcome?name=value
+        // GET: /<controller>/welcome?name=value or GET: /<controller>/welcome/name
         [HttpGet]
         [Route("")]
         [Route("/helloworld/welcome/{name?}")]
