@@ -8,12 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HelloASPDotNET.Controllers
 {
+    [Route("/helloworld")]
     public class HelloController : Controller
     {
         // GET: /<controller>/
+        [HttpGet]
         public IActionResult Index()
         {
-            string html = "<form method='post' action='hello/display'>" +
+            string html = "<form method='post' action='helloworld/display'>" +
                 "<input type='text' name='name' />" +
                 "<input type='submit' value='Greet Me!' />" +
                 "</form>";
@@ -22,23 +24,12 @@ namespace HelloASPDotNET.Controllers
         }
 
         // POST: /<controller>/display
+        // GET: /<controller>/welcome?name=value or GET: /<controller>/welcome/name
+        [HttpGet("welcome/{name?}")]
+        [HttpPost("display")]
         public IActionResult Display(string name = "World")
         {
             return Content(string.Format("<h1>Hello {0}</h1>", name), "text/html");
         }
-
-        [HttpGet]
-        public IActionResult Welcome(string name = "World")
-        {
-            return Content(string.Format("<h1>Welcome to my app, {0}!</h1>", name), "text/html");
-        }
-
-        [HttpGet]
-        [Route("/hello/{name}")]
-        public IActionResult WelcomeByName(string name)
-        {
-            return Content(string.Format("<h1>Welcome to my app, {0}!</h1>", name), "text/html");
-        }
-
     }
 }
