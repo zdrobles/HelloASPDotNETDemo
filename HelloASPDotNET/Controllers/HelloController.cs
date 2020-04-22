@@ -28,7 +28,7 @@ namespace HelloASPDotNET.Controllers
         [Route("/helloworld/display")]
         public IActionResult Display(string name = "World")
         {
-            return Content(string.Format("<h1>Hello {0}</h1>", name), "text/html");
+            return Content("<h1>Hello " + name + "!</h1>", "text/html");
         }
 
         // GET: /<controller>/welcome?name=value or GET: /<controller>/welcome/name
@@ -36,7 +36,7 @@ namespace HelloASPDotNET.Controllers
         [Route("/helloworld/welcome/{name?}")]
         public IActionResult Welcome(string name = "World")
         {
-            return Content(string.Format("<h1>Welcome to my app, {0}!</h1>", name), "text/html");
+            return Content("<h1>Welcome to my app, " + name + "!</h1>", "text/html");
         }
     }
 }
