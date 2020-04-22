@@ -20,11 +20,10 @@ namespace HelloASPDotNET.Controllers
 
         // GET: /<controller>/welcome?name=value or GET: /<controller>/welcome/name
         [HttpGet]
-        [Route("")]
         [Route("/helloworld/welcome/{name?}")]
         public IActionResult Welcome(string name = "World")
         {
-            return Content(string.Format("<h1>Welcome to my app, {0}!</h1>", name), "text/html");
+            return Content("<h1>Welcome to my app, " + name + "!</h1>", "text/html");
         }
     }
 }
