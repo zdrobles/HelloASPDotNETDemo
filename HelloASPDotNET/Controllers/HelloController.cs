@@ -29,7 +29,7 @@ namespace HelloASPDotNET.Controllers
         [HttpPost("display")]
         public IActionResult Display(string name = "World")
         {
-            return Content(string.Format("<h1>Hello {0}</h1>", name), "text/html");
+            return Content("<h1>Hello " + name + "!</h1>", "text/html");
         }
     }
 }
