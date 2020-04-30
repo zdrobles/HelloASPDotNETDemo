@@ -15,7 +15,8 @@ namespace HelloASPDotNET.Controllers
         [Route("/helloworld")]
         public IActionResult Index()
         {
-            return Content("<h1>Hello World</h1>", "text/html");
+            string html = "<h1>Hello World!</h1>";
+            return Content(html, "text/html");
         }
 
         // GET: /<controller>/welcome?name=value or GET: /<controller>/welcome/name
