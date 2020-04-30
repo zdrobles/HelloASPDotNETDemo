@@ -15,7 +15,7 @@ namespace HelloASPDotNET.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            string html = "<form method='post' action='helloworld/display'>" +
+            string html = "<form method='post' action='/helloworld/welcome'>" +
                 "<input type='text' name='name' />" +
                 "<input type='submit' value='Greet Me!' />" +
                 "</form>";
@@ -23,13 +23,13 @@ namespace HelloASPDotNET.Controllers
             return Content(html, "text/html");
         }
 
-        // POST: /<controller>/display
         // GET: /<controller>/welcome?name=value or GET: /<controller>/welcome/name
+        // POST: /<controller>/welcome
         [HttpGet("welcome/{name?}")]
-        [HttpPost("display")]
-        public IActionResult Display(string name = "World")
+        [HttpPost("welcome")]
+        public IActionResult Welcome(string name = "World")
         {
-            return Content("<h1>Hello " + name + "!</h1>", "text/html");
+            return Content("<h1>Welcome to my app, " + name + "!</h1>", "text/html");
         }
     }
 }
