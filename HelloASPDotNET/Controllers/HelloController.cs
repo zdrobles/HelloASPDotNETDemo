@@ -19,9 +19,10 @@ namespace HelloASPDotNET.Controllers
 
         [HttpPost]
         [Route("/hello")]
-        public IActionResult Welcome(string name = "World")
+        public IActionResult Welcome(string name)
         {
-            return Content("<h1>Welcome to my app, " + name + "!</h1>", "text/html");
+            ViewBag.person = name;
+            return View();
         }
     }
 }

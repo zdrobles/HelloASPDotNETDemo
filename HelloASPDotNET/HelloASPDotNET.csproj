@@ -6,7 +6,4 @@
 
 
 
-  <ItemGroup>
-    <Folder Include="Views\Hello\" />
-  </ItemGroup>
 </Project>
